@@ -16,6 +16,8 @@ var name = {"name": "Bugs Bunny"},
 		}
 	];
 
+var skillsArray = ["dummy"];
+
 var occ = occupations.occupations;
 
 
@@ -58,12 +60,12 @@ exports.getHobbiesType = function(req, res) {
 };
 
 exports.changeName = function(req, res) {
-	name.name = req.body;
+	name.name = req.body.name;
 	res.json(name.name);
 }
 
 exports.changeLocation = function(req, res) {
-	location.location = req.body;
+	location.location = req.body.location;
 	res.json(location.location);
 }
 
@@ -78,5 +80,10 @@ exports.addOccupation = function(req, res) {
 }
 
 exports.getSkills = function(req, res) {
-	skillsArray.push(req.body);
+	res.json(skillsArray);
+}
+
+exports.addSkills = function(req, res) {
+	skillsArray.push(req.body.key);
+	res.json(skillsArray);
 }

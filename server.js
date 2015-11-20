@@ -6,7 +6,7 @@ var express = require('express'),
 var middleware = require('./controllers/middleware.js'),
 		mainCtrl = require('./controllers/mainCtrl.js');
 
-skillsArray = ["dummy"];
+
 
 app.use(bodyparser.json());
 // app.use(middleware.addHeaders);
@@ -24,6 +24,7 @@ app.get('/name', mainCtrl.getName)
 	.put('/name', mainCtrl.changeName)
 	.put('/location', mainCtrl.changeLocation)
 	.post('/hobbies', mainCtrl.addHobby)
-	.post('/occupations', mainCtrl.addOccupation);
+	.post('/occupations', mainCtrl.addOccupation)
+	.post('/skillz', mainCtrl.addSkills);
 
 

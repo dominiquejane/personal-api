@@ -10,7 +10,7 @@ var middleware = require('./controllers/middleware.js'),
 
 app.use(bodyparser.json());
 // app.use(middleware.addHeaders);
-app.use(cors());
+app.use(cors()); //takes care of headers so we don't need extra middleware
 
 app.listen(9001);
 
